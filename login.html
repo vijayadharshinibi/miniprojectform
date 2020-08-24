@@ -1,0 +1,109 @@
+<html>
+<head>
+<title>Login Page</title>
+
+</head>
+<style>@import url(http://fonts.googleapis.com/css?family=Raleway);
+h2{
+padding: 25px 35px;
+margin: -8px -40px;
+text-align:center;
+border-radius: 9px 9px 0 0;}
+body{
+	background-color:#280000;}
+hr{
+margin-top:20px;
+border: 0;
+border-top: 1px solid #ccc;
+margin-bottom: 40px;}
+div.container{
+margin-right: 5px auto;
+font-family: 'Raleway', sans-serif;}
+div.main{
+width: 300px;
+padding: 10px 50px 25px;
+border: 2px solid gray;
+border-radius: 10px;
+font-family: raleway;
+float:left;
+margin-top:100px;
+margin-left:580px;
+background-color:lightgreen;
+}
+input[type=text],input[type=password]{
+width: 100%;
+height: 40px;
+padding: 5px;
+margin-bottom: 25px;
+margin-top: 5px;
+border: 2px solid #ccc;
+color: #4f4f4f;
+font-size: 16px;
+border-radius: 5px;}
+label{
+	color: black;
+text-shadow: 0 1px 0 #fff;
+font-size: 14px;
+font-weight: bold;}
+center{
+font-size:32px;}
+.back{
+text-decoration: none;
+padding: 3px 20px;
+border-radius: 2px;
+color: black;}
+input[type=button]{
+	font-size: 16px;
+background:    #FF7F50;
+border: 1px solid inset;
+color: #4E4D4B;
+font-weight: bold;
+cursor: pointer;
+width: 100%;
+border-radius: 5px;
+padding: 10px 0;
+outline:none;
+}
+input[type=button]:hover{
+background: #FF4500;
+}</style>
+<body>
+<div class="navigation">
+  <a class="button" href="http://localhost:8081/Miniprojectdemo/index.html">
+ <div class="login"></div>
+</a>
+</div>
+<div class="container"></div>
+<div class="main">
+<h2>Welcome to Continue </h2>
+<form action="" method="post" >
+<label>User Name :</label>
+<input type="text" name="username" id="username"/>
+<label>Password :</label>
+<input type="password" name="password" id="password"/>
+<input type="button" value="Login" id="submit" onclick="validate()"/>
+</form>
+</div>
+<script>var attempt = 3; 
+function validate(){
+	var username = document.getElementById("username").value;
+	var password = document.getElementById("password").value;
+	if ( username == "viji" && password == "viji123"){
+	alert ("Login successfully");
+	window.location =( "http://localhost:8081/Miniprojectdemo/index.html"); //redirecting on other  page
+	return false;
+	}
+	else{
+	attempt --;
+	alert("You have left "+attempt+" attempt;");
+	if( attempt == 0){
+	document.getElementById("username").disabled = true;
+	document.getElementById("password").disabled = true;
+	document.getElementById("submit").disabled = true;
+	return false;
+	}
+	}
+	}
+ </script>
+	 </body>
+</html>
